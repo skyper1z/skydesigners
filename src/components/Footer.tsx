@@ -1,12 +1,23 @@
-import { Phone, MessageCircle, Instagram, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { Phone, MessageCircle } from 'lucide-react';
+import { socialLinks } from './SocialLinks';
+import logo from '../assets/logo.png';
 
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Contact Info */}
-          <div>
+          {/* Brand & Contact Info */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center p-1">
+                <img src={logo} alt="SkyDesigners Logo" className="w-full h-full object-contain" />
+              </div>
+              <span className="text-2xl font-bold">SKYDESIGNERS</span>
+            </div>
+            <p className="text-gray-400 mb-6">
+              Transforming ideas into visual masterpieces.
+            </p>
             <h3 className="text-xl mb-6">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
@@ -24,22 +35,18 @@ export function Footer() {
           <div>
             <h3 className="text-xl mb-6">Follow Us</h3>
             <div className="flex gap-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                 className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center hover:scale-110 transition">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-                 className="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center hover:scale-110 transition">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                 className="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center hover:scale-110 transition">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                 className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center hover:scale-110 transition">
-                <Facebook className="w-5 h-5" />
-              </a>
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition ${link.colorClass || 'bg-blue-600'}`}
+                  title={link.name}
+                >
+                  <link.icon className={`w-5 h-5 ${link.name === 'Snapchat' ? 'text-black' : 'text-white'}`} />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -68,8 +75,10 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
-          <p>© 2023 by Osei-Bonsu Skyper. All rights reserved.</p>
-          <p>Proudly created with Wix.com</p>
+          <p>© 2025 by Osei-Bonsu Skyper. All rights reserved.</p>
+          <p>
+            SKYDESIGNERS
+          </p>
         </div>
       </div>
     </footer>

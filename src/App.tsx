@@ -51,15 +51,6 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <Header />
-      
-      {/* Admin Access Button */}
-      <button
-        onClick={() => setShowAdmin(true)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition z-50 flex items-center justify-center"
-        title="Admin Console"
-      >
-        <span className="font-bold">⚙️</span>
-      </button>
 
       <main>
         <Hero />
@@ -71,6 +62,16 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+
+      {/* Admin Access Button */}
+      <button
+        onClick={() => setShowAdmin(true)}
+        className="fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition z-[100] flex items-center justify-center opacity-80 hover:opacity-100"
+        style={{ bottom: '1.5rem', right: '1.5rem' }}
+        title="Admin Console"
+      >
+        <span className="font-bold text-lg">⚙️</span>
+      </button>
     </div>
   );
 }
