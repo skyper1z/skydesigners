@@ -151,16 +151,17 @@ export function Portfolio() {
       {/* Lightbox Modal */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[5000] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
           onClick={() => setSelectedProject(null)}
         >
           {/* Close Button - Fixed to viewport for better mobile access */}
           <button
             onClick={() => setSelectedProject(null)}
-            className="fixed top-4 right-4 z-[110] p-2 bg-black/50 rounded-full text-white hover:text-gray-300 transition hover:bg-black/70"
+            className="fixed top-6 right-6 z-[5010] flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition backdrop-blur-md border border-white/20"
             aria-label="Close lightbox"
           >
-            <X className="w-8 h-8" />
+            <span className="text-sm font-medium">Close</span>
+            <X className="w-6 h-6" />
           </button>
 
           <div
