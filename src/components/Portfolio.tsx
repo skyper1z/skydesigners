@@ -154,25 +154,26 @@ export function Portfolio() {
           className="fixed inset-0 z-[5000] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
           onClick={() => setSelectedProject(null)}
         >
-          {/* Close Button - Fixed to viewport for better mobile access */}
-          <button
-            onClick={() => setSelectedProject(null)}
-            className="fixed top-6 right-6 z-[5010] flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition backdrop-blur-md border border-white/20"
-            aria-label="Close lightbox"
-          >
-            <span className="text-sm font-medium">Close</span>
-            <X className="w-6 h-6" />
-          </button>
+
 
           <div
             className="relative w-full max-w-5xl max-h-[90vh] flex flex-col items-center overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={selectedProject.image}
-              alt={selectedProject.title}
-              className="w-auto h-auto max-w-full max-h-[60vh] md:max-h-[80vh] object-contain rounded-lg shadow-2xl mx-auto"
-            />
+            <div className="relative group/image">
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-2 right-2 z-[5010] p-2 bg-black/50 hover:bg-black/70 rounded-full text-white transition backdrop-blur-sm border border-white/20 opacity-0 group-hover/image:opacity-100 focus:opacity-100 mobile-touch:opacity-100"
+                aria-label="Close lightbox"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-auto h-auto max-w-full max-h-[60vh] md:max-h-[80vh] object-contain rounded-lg shadow-2xl mx-auto"
+              />
+            </div>
             <div className="mt-6 text-center text-white px-4">
               <h3 className="text-xl md:text-2xl font-bold mb-2">{selectedProject.title}</h3>
               <p className="text-gray-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
